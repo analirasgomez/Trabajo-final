@@ -1,8 +1,8 @@
 
 from collections import OrderedDict
 import random
-from PyGame import Rect
-import PyGame 
+from pygame import Rect
+import pygame 
 import numpy as np
 WINDOW_WIDTH, WINDOW_HEIGHT = 500, 601
 GRID_WIDTH, GRID_HEIGHT = 300, 600

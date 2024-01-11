@@ -73,7 +73,8 @@ def draw_grid():
 def draw_piece(piece):
     shape = piece.shape[piece.rotation]
     for row in range(len(shape)):
-        for col in range(len(shape[row])):
+        print(shape)
+        for col in range(len(shape)):
             if shape[row][col]:
                 pygame.draw.rect(screen, piece.color, (piece.x + col, piece.y + row, 1, 1))
 
