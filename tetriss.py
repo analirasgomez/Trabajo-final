@@ -1,4 +1,5 @@
 import pygame
+import numpy as np
 import random
 
 # Inicializar pygame
@@ -14,28 +15,16 @@ FPS = 30
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
-CYAN = (0, 255, 255)
-MAGENTA = (255, 0, 255)
-YELLOW = (255, 255, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-ORANGE = (255, 165, 0)
 
 # Formas de las piezas
 SHAPES = [
-    [[1, 1, 1, 1]],
-    [[1, 1, 1],
-     [1]],
-    [[1, 1, 1],
-     [0, 0, 1]],
-    [[1, 1, 1],
-     [0, 1]],
-    [[1, 1, 1],
-     [1, 0, 0]],
-    [[1, 1],
-     [1, 1]],
-    [[1, 1, 0],
-     [0, 1, 1]],
+    np.array([[1, 1, 1, 1]]),
+    np.array([[1, 1, 1], [1, 0, 0]]),
+    np.array([[1, 1, 1], [0, 0, 1]]),
+    np.array([[1, 1, 1], [0, 1, 0]]),
+    np.array([[1, 1, 1], [0, 1, 0]]),
+    np.array([[1, 1], [1, 1]]),
+    np.array([[1, 1, 0], [0, 1, 1]])
 ]
 
 # Clase Pieza
@@ -79,7 +68,7 @@ def draw_piece(piece):
 
 def main():
     running = True
-    current_piece = Piece(random.choice(SHAPES), random.choice([RED, CYAN, MAGENTA, YELLOW, GREEN, BLUE, ORANGE]))
+    current_piece = Piece(random.choice(SHAPES), RED)
 
     while running:
         for event in pygame.event.get():
@@ -109,4 +98,3 @@ def main():
 if __name__ == "__main__":
     main()
     pygame.quit()
-
