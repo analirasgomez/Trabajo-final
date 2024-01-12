@@ -1,4 +1,4 @@
-Snake Game in Python with Pygame
+**Snake Game in Python with Pygame**
 This is a classic Snake Game implemented in Python using the Pygame library.
 
 How to Play
